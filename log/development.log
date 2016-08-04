@@ -6,3 +6,76 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 29ms (Views: 9.5ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20160804085611)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "time" datetime, "task" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160804085611"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-08-04 08:56:19 UTC], ["updated_at", 2016-08-04 08:56:19 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2016-08-04 14:26:49 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (10.5ms)
+Completed 200 OK in 27ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-04 14:26:53 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 14:26:54 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 541ms (Views: 535.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 14:27:00 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (33.0ms)
+  Rendered tasks/new.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 73ms (Views: 57.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/tasks" for ::1 at 2016-08-04 14:27:06 +0530
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OBYLAOdEBN256rzLAib7TPCeUjy7/aIbuwNs/0w6j75GrVAxrXWRDRq8C41UVR0ewZ6kB+9iBlVMfl6NhPvrzw==", "task"=>{"time(1i)"=>"2016", "time(2i)"=>"8", "time(3i)"=>"4", "time(4i)"=>"08", "time(5i)"=>"57", "task"=>"fnalsk"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("time", "task", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["time", 2016-08-04 08:57:00 UTC], ["task", "fnalsk"], ["created_at", 2016-08-04 08:57:06 UTC], ["updated_at", 2016-08-04 08:57:06 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/1
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks/1" for ::1 at 2016-08-04 14:27:06 +0530
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 43ms (Views: 36.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 14:27:08 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.7ms)
+
+
