@@ -135,3 +135,1677 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 352ms (Views: 339.7ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for ::1 at 2016-08-04 15:30:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 23ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:30:55 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 813ms (Views: 807.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:30:59 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (15.3ms)
+  Rendered tasks/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 85ms (Views: 80.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for ::1 at 2016-08-04 15:31:05 +0530
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmpnDzQh++WpAmxMFlR6u7Sasb30XZpRbCtMaBfEAS5aIgFpiixBrMc5hDLY2g3aQe2yS1uiWRgNfPFFAA2D7w==", "task"=>{"time"=>"test", "task"=>"test"}, "commit"=>"Create Task"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("task", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["task", "test"], ["created_at", 2016-08-04 10:01:05 UTC], ["updated_at", 2016-08-04 10:01:05 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/2
+Completed 302 Found in 12ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/tasks/2" for ::1 at 2016-08-04 15:31:05 +0530
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 120ms (Views: 111.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/tasks/2" for ::1 at 2016-08-04 15:31:11 +0530
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HWnjNCzEdMoZ+8tO8GvmE8yJTt5qX8vN3e8xON46bVsi8YCOYYb3WTUbInAGEOzKplX5gOzj3W31eWnHtb0x6Q==", "id"=>"2"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:31:11 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2016-08-04 15:31:27 +0530
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.6ms)
+  Rendered tasks/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 72ms (Views: 66.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:31:33 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 73ms (Views: 68.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:31:35 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.0ms)
+  Rendered tasks/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:31:41 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 71ms (Views: 66.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:31:49 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (6.8ms)
+  Rendered tasks/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 76ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:35:29 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (1.9ms)
+  Rendered tasks/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 65ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-04 15:35:35 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:35:40 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 66ms (Views: 64.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:35:42 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.5ms)
+  Rendered tasks/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 82ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:43:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 837ms (Views: 824.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:43:54 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (12.3ms)
+  Rendered tasks/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 96ms (Views: 91.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:46:10 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 388ms (Views: 375.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:46:12 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (17.8ms)
+  Rendered tasks/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 97ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:48:23 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (28.6ms)
+Completed 500 Internal Server Error in 261ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'moment' with type 'application/javascript'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1606272471558105040_70358726506000'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.0ms)
+Started GET "/tasks" for ::1 at 2016-08-04 15:48:45 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap-datetimepicker.' with type 'application/javascript'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1606272471558105040_70358737567480'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.6ms)
+Started GET "/tasks" for ::1 at 2016-08-04 15:50:21 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (27.1ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'moment' with type 'application/javascript'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2416227224358527239_70150236284240'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.5ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.6ms)
+Started GET "/tasks" for ::1 at 2016-08-04 15:53:20 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (29.8ms)
+Completed 500 Internal Server Error in 402ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'moment' with type 'application/javascript'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1267113904295363404_70276105010280'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.3ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.8ms)
+Started GET "/" for ::1 at 2016-08-04 15:55:11 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (11.1ms)
+Completed 200 OK in 25ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:55:15 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (32.4ms)
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'moment' with type 'application/javascript'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:17
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3201519127803568309_70364512964440'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.1ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.0ms)
+Started GET "/tasks" for ::1 at 2016-08-04 15:57:04 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 972ms (Views: 960.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:57:07 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (12.7ms)
+  Rendered tasks/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 112ms (Views: 107.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:57:27 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (7.4ms)
+  Rendered tasks/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 98ms (Views: 95.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:57:38 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.3ms)
+  Rendered tasks/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 70ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 15:59:40 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 75ms (Views: 73.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 15:59:41 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (11.7ms)
+  Rendered tasks/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 90ms (Views: 86.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:01:45 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (20.1ms)
+  Rendered tasks/new.html.erb within layouts/application (29.8ms)
+Completed 500 Internal Server Error in 265ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap-datepicker' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:13
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1756288974659532917_70284894765900'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (36.2ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (99.9ms)
+Started GET "/tasks" for ::1 at 2016-08-04 16:04:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (24.2ms)
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__13782404759094756_70337917868400'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (35.9ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (101.1ms)
+Started GET "/tasks" for ::1 at 2016-08-04 16:04:32 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 261ms (Views: 259.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:04:34 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (12.2ms)
+  Rendered tasks/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 114ms (Views: 110.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:04:40 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (5.5ms)
+  Rendered tasks/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 102ms (Views: 97.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:06:15 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (21.4ms)
+  Rendered tasks/new.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 409ms (Views: 393.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:06:48 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.4ms)
+  Rendered tasks/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 73ms (Views: 71.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:12:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (20.1ms)
+  Rendered tasks/new.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 1147ms (Views: 1123.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 16:12:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 625ms (Views: 611.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:12:54 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (13.6ms)
+  Rendered tasks/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 207ms (Views: 203.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:13:14 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.7ms)
+  Rendered tasks/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 247ms (Views: 245.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:15:17 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.7ms)
+  Rendered tasks/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 247ms (Views: 245.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:18:23 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (4.7ms)
+  Rendered tasks/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 249ms (Views: 247.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:18:44 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.2ms)
+  Rendered tasks/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 198ms (Views: 196.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:19:17 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.2ms)
+  Rendered tasks/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 198ms (Views: 196.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:19:32 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (19.5ms)
+  Rendered tasks/new.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 561ms (Views: 545.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 16:21:38 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (27.7ms)
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'twitter-bootstrap-rails' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4323527685151123216_70328571629400'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (33.6ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (95.7ms)
+Started GET "/tasks" for ::1 at 2016-08-04 16:21:48 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap-rails' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4323527685151123216_70328568280860'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.6ms)
+Started GET "/tasks" for ::1 at 2016-08-04 16:21:55 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4323527685151123216_70328568538560'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.1ms)
+Started GET "/" for ::1 at 2016-08-04 16:24:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 28ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-04 16:24:54 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-04 16:24:55 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2016-08-04 16:24:55 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (34.7ms)
+Started GET "/tasks" for ::1 at 2016-08-04 16:24:56 +0530
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 314ms (Views: 308.3ms | ActiveRecord: 0.4ms)
+
+
+Completed 200 OK in 904ms (Views: 898.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:24:59 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (12.4ms)
+  Rendered tasks/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 235ms (Views: 228.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:26:22 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.4ms)
+  Rendered tasks/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 238ms (Views: 235.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:26:49 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.2ms)
+  Rendered tasks/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 239ms (Views: 237.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:27:11 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.0ms)
+  Rendered tasks/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 242ms (Views: 240.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:27:46 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.3ms)
+  Rendered tasks/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 242ms (Views: 239.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:27:51 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.3ms)
+  Rendered tasks/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 223ms (Views: 221.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:28:19 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (6.4ms)
+  Rendered tasks/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 216ms (Views: 214.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:28:58 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.6ms)
+  Rendered tasks/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 231ms (Views: 229.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:29:08 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.1ms)
+  Rendered tasks/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 228ms (Views: 225.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:29:32 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.4ms)
+  Rendered tasks/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 229ms (Views: 227.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:30:06 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.6ms)
+  Rendered tasks/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 237ms (Views: 235.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:30:27 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (5.3ms)
+  Rendered tasks/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 223ms (Views: 221.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:32:38 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.1ms)
+  Rendered tasks/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 250ms (Views: 248.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:32:58 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.1ms)
+  Rendered tasks/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 247ms (Views: 245.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:33:45 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.2ms)
+  Rendered tasks/new.html.erb within layouts/application (4.7ms)
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:33:45 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.3ms)
+  Rendered tasks/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 365ms (Views: 363.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:33:45 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.5ms)
+  Rendered tasks/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 382ms (Views: 378.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 362ms (Views: 359.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-04 16:37:52 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.7ms)
+  Rendered tasks/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 252ms (Views: 248.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:04:22 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (5.3ms)
+Completed 200 OK in 33ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:04:24 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:04:26 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (36.5ms)
+  Rendered tasks/new.html.erb within layouts/application (45.5ms)
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:04:26 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (5.5ms)
+  Rendered tasks/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 831ms (Views: 821.3ms | ActiveRecord: 0.6ms)
+
+
+Completed 200 OK in 255ms (Views: 252.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:04:58 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.2ms)
+  Rendered tasks/new.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap-datepicker' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datetimepicker-rails-0.0.11/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datetimepicker-rails-0.0.11/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4235224840650595109_70182800925480'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.4ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.1ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.2ms)
+Started GET "/" for ::1 at 2016-08-05 12:05:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (3.8ms)
+Completed 200 OK in 33ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:05:15 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:05:18 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:05:18 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (34.3ms)
+  Rendered tasks/new.html.erb within layouts/application (42.5ms)
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:05:19 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.9ms)
+  Rendered tasks/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 947ms (Views: 936.9ms | ActiveRecord: 0.5ms)
+
+
+Completed 200 OK in 545ms (Views: 541.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:07:20 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (4.7ms)
+Completed 200 OK in 26ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:07:22 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:07:23 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (20.7ms)
+  Rendered tasks/new.html.erb within layouts/application (27.8ms)
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1515278729729127585_70251967627200'
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:07:23 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.8ms)
+  Rendered tasks/new.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1515278729729127585_70251957183580'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.8ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.2ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.0ms)
+Started GET "/" for ::1 at 2016-08-05 12:09:23 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (7.7ms)
+Completed 200 OK in 37ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:09:25 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:09:26 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (33.5ms)
+  Rendered tasks/new.html.erb within layouts/application (40.4ms)
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3985777576368352214_70164742021420'
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:09:26 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.3ms)
+  Rendered tasks/new.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3985777576368352214_70164742450040'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.1ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.7ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (171.7ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (101.4ms)
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:09:35 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (3.3ms)
+  Rendered tasks/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 1078ms (Views: 1075.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:09:50 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (4.9ms)
+  Rendered tasks/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 236ms (Views: 234.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:12:29 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:12:33 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.7ms)
+  Rendered tasks/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 220ms (Views: 217.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:13:18 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (17.9ms)
+  Rendered tasks/new.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 485ms (Views: 459.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:13:28 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.4ms)
+  Rendered tasks/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 185ms (Views: 182.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:13:38 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (5.2ms)
+  Rendered tasks/new.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2669562174254882505_70116894818420'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.5ms)
+Started GET "/" for ::1 at 2016-08-05 12:15:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 33ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:15:21 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:15:22 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:15:22 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (20.8ms)
+  Rendered tasks/new.html.erb within layouts/application (26.6ms)
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-4.0.0.alpha3.1/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-4.0.0.alpha3.1/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1167046258350334490_70236546023600'
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:15:22 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.1ms)
+  Rendered tasks/new.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-4.0.0.alpha3.1/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-4.0.0.alpha3.1/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1167046258350334490_70236565558880'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.2ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.8ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (165.6ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (177.8ms)
+Started GET "/" for ::1 at 2016-08-05 12:19:44 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (5.8ms)
+Completed 200 OK in 28ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-05 12:19:46 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:19:47 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (31.8ms)
+  Rendered tasks/new.html.erb within layouts/application (38.8ms)
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4537382663731063779_70241624890840'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.6ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:19:47 +0530
+Processing by TasksController#new as HTML
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered tasks/_form.html.erb (11.7ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (105.8ms)
+  Rendered tasks/new.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/config
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/images
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/app/assets/stylesheets
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/javascripts
+  /Users/shashank/Documents/Assignments Jedi School/todo/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap-datepicker-rails-1.6.1.1/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/bootstrap3-datetimepicker-rails-4.17.37/vendor/assets/stylesheets
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/momentjs-rails-2.11.1/vendor/assets/javascripts
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actioncable-5.0.0/lib/assets/compiled
+  /Users/shashank/.rvm/gems/ruby-2.2.4/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    4:     <title>Todo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.css:12
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4537382663731063779_70241622834300'
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/shashank/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.8ms)
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:19:59 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.3ms)
+  Rendered tasks/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 428ms (Views: 424.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-08-05 12:20:59 +0530
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (2.7ms)
+  Rendered tasks/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 228ms (Views: 225.6ms | ActiveRecord: 0.0ms)
+
+
