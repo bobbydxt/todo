@@ -35,6 +35,7 @@ class TasksController < ApplicationController
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
+    UserMailer.notify_email(current_user,@task.task,@task.time).deliver
   end
 
   # PATCH/PUT /tasks/1
