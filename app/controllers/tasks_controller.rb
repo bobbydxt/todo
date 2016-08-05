@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /tasks
   # GET /tasks.json
   def index
@@ -35,6 +35,7 @@ class TasksController < ApplicationController
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
+    UserMailer.notify_email(current_user,@task.task,@task.time).deliver
   end
 
   # PATCH/PUT /tasks/1
