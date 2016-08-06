@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+A To-Do application for mananging personal tasks. This application requires user login. 
+It also sends e-mail reminders to the user.
 
-* System dependencies
+To Run the application:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Clone the repository
+* Go to the cloned repository in console and type the command
+```Shell 
+ $ rails s 
+```
+* Open browser and go to localhost:3000
